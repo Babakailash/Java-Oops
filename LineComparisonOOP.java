@@ -1,6 +1,6 @@
 public class LineComparisonOOP {
 	
-	//variables_Kailash
+	//variables
 	private double length_of_line;
 	private int x1, x2, y1, y2;
 
