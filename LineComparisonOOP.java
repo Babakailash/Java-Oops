@@ -1,65 +1,37 @@
-public class LineComparisonOOP {
-	
-	//variables
-	private double length_of_line;
-	private int x1, x2, y1, y2;
+import java.util.Scanner;
+import java.lang.*;
+public class LineComparisonOOP
+{
+public static void main(String[] args)
+{
+    Scanner sc= new Scanner(System.in);
+System.out.println("Enter The value of X1 and X2");
+      int x1=sc.nextInt();
+      int x2=sc.nextInt();
+System.out.println("Enter The value of y1 and y2");
+      int y1=sc.nextInt();
+      int y2=sc.nextInt();
 
-	//Parameter constructor
-	public LineComparisonOOP(int x1, int y1, int x2, int y2) {
-		this.x1 = x1;
-		this.y1 = y1;
-		this.x2 = x2;
-		this.y2 = y2;
-		}
+      double a=Math.pow((x2-x1), 2);
+      double b=Math.pow((y2-y1), 2);
+      Double length_of_line1=Math.sqrt(a+b);
+     //System.out.println("Length Of a line: "+length_of_line1);
 
-	 // calculating length of line 1 and 2
-	public double lengthOfLine() {
-		length_of_line = Math.sqrt( (x2 - x1) * (x2 - x1)  + (y2- y1) * (y2- y1) );
-		return Math.round(length_of_line * 100.0)/100.0;
-		}
+System.out.println("Enter The value of X3 and X4");
+      int x3=sc.nextInt();
+      int x4=sc.nextInt();
+System.out.println("Enter The value of y3 and y4");
+      int y3=sc.nextInt();
+      int y4=sc.nextInt();
 
-		// Overriding equals() Method
-    public boolean equals(LineComparisonOOP Line_2)
-    {	boolean equalityValue;
-
-        if(this.lengthOfLine() == Line_2.lengthOfLine())
-            equalityValue = true;
-        else
-            equalityValue = false;
-
-        return equalityValue;
-    }
+      double c=Math.pow((x4-x3), 2);
+      double d=Math.pow((y4-y3), 2);
+      Double length_of_line2=Math.sqrt(c+d);
 
 
 
-	public static void main(String[] args) {
-		System.out.println( "Welcome to Line Comparison Computation OOP Program" );
+       System.out.println("\n"+"Result\t"+length_of_line1.compareTo(length_of_line2));
 
-		// Co-ordinates Generation for 4 Points on Lines 1 & 2
-        int x1 = (int)(Math.floor(Math.random()*10));
-        int y1 = (int)(Math.floor(Math.random()*10));
-        int x2 = (int)(Math.floor(Math.random()*10));
-        int y2 = (int)(Math.floor(Math.random()*10));
-        int x3 = (int)(Math.floor(Math.random()*10));
-        int y3 = (int)(Math.floor(Math.random()*10));
-        int x4 = (int)(Math.floor(Math.random()*10));
-        int y4 = (int)(Math.floor(Math.random()*10));
 
-        // Instantiating Objects
-        LineComparisonOOP Line_1 = new LineComparisonOOP(x1, y1, x2, y2);
-        LineComparisonOOP Line_2 = new LineComparisonOOP(x3, y3, x4, y4);
-
-        System.out.println("length of line 1 is "+Line_1.lengthOfLine() );
-        System.out.println("length of line 2 is "+Line_2.lengthOfLine() );
-	
-		boolean equality_check = Line_1.equals(Line_2);
-
-        // Display if Two are Equal or Not Equal
-        if(equality_check)
-            System.out.println("Lines are Equal");
-        else
-            System.out.println("Lines are Not Equal");
-
-	}
-
+}
 }
